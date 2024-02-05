@@ -1,0 +1,845 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+
+n = 0
+while (n != "n" and n != "N"):
+    print(
+        'choose the equation which type of equation that you are using:\nLinear(press 1)\nQudratic (press 2)\nlogritumic(press 3)\nExpontial (press 4) \nTrignomatric (press 5)\n3rd degree polynomial equation (press 6)\n4rd degree polynomial equation (press 7)')
+    button_0 = eval(input('Enter no '))
+    if (button_0 == 1):
+        print('your equation looks: y = a*x + b')
+        a = eval(input('Enter a  : a valuo :'))
+        while (type(a) == float or type(a) == 0):
+            if a == 0:
+                print("your function become zere,so graph will not show")
+                a = eval(input('Again Enter a  : a valuo :'))
+            elif type(a) == float:
+                print("your input valuo is in float data type,so it wil become program error")
+                a = eval(input('Enter a  : a valuo :'))
+        b = eval(input(' Enter a : b-valuo : '))
+        while (type(b) == float):
+            print("your input valuo is in float data type,so it wil become program error")
+            b = eval(input('Again Enter a  : b valuo :'))
+        start_x_valuoe = eval(input('Enter the start x valuo that you want to check?'))
+        while (type(start_x_valuoe) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            start_x_valuoe = eval(input('Again Enter a : start_x_valuo : '))
+        end_x_valuoe = eval(input('Enter the end x valuo that you want to check?'))
+        while (type(end_x_valuoe) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            end_x_valuoe = eval(input('Again Enter a : end_x_valuo : '))
+        print('You are want to use quardratic equation ..')
+        if start_x_valuoe < 0 and end_x_valuoe >= 0:
+            # if start_x_valuoe<0 and end_x_valuoe==0:
+            list_x = []
+            list_y = []
+            x = start_x_valuoe
+            list_x.append(x)
+            # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+            total_x_valuoe = -start_x_valuoe + end_x_valuoe
+            for i in range(total_x_valuoe):
+                # x = eval (input ('Enter  x value : '))
+                x = x + 1
+                list_x.append(x)
+            print('Your x values are :', list_x)
+            for i in range(len(list_x)):
+                y = a * (list_x[i]) + b
+                list_y.append(y)
+            print('Your y values are :', list_y)
+        elif start_x_valuoe >= 0 and end_x_valuoe <= 0:
+            # if end_x_valuoe==0:
+            list_x = []
+            list_y = []
+            x = start_x_valuoe
+            list_x.append(x)
+            total_x_valuoe = start_x_valuoe - end_x_valuoe
+            # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+            for i in range(total_x_valuoe):
+                # x = eval (input ('Enter  x value : ')
+                x = x - 1
+                list_x.append(x)
+            print('Your x values are :', list_x)
+            for i in range(len(list_x)):
+                y = a * (list_x[i]) + b
+                list_y.append(y)
+            print('Your y values are :', list_y)
+        elif start_x_valuoe > 0 and end_x_valuoe > 0:
+            if start_x_valuoe > end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # total_x_valuoe=start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe, -1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x - 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = a * (list_x[i]) + b
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            elif start_x_valuoe < end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x + 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = a * (list_x[i]) + b
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            else:
+                pass
+        elif start_x_valuoe < 0 and end_x_valuoe < 0:
+            if end_x_valuoe < start_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # end_x_valuoe_final=-start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe, -1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x - 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = a * (list_x[i]) + b
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            elif end_x_valuoe > start_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # end_x_valuoe_final=-start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x + 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = a * (list_x[i]) + b
+                    list_y.append(y)
+                    print('Your y values are :', list_y)
+            else:
+                pass
+        else:
+            pass
+
+        domain = input('Are  You want to check its domain and range?yes press (y)/no press(n)')
+        if domain == 'y' or domain == "Y":
+            print('The domain  of Given equation is (-infinty   +infinty)')
+            print('The Range  of Given equation is (-infinty   +infinty)')
+        elif domain == "n" or domain == "N":
+            print('okay you don"t want to check domain and Range')
+        else:
+            print('invalid')
+        plt.plot(list_x, list_y)
+        plt.show()
+    elif (button_0 == 2):
+        print('You are want to use quardratic equation ..')
+        print('quardratic equation looks ax^2+bx+c')
+        # print('Note: if your equation is complex so then your equation cannot be solved')
+        print("Note:Don't Enter valuo in points or floating data type")
+        a = eval(input('Enter a   a valuo : '))
+        while (a == 0 or type(a) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            a = eval(input('Again Enter a   a-valuo : '))
+        b = eval(input('Enter a   b valuo :'))
+        while (type(b) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            b = eval(input('Again Enter a  : b-valuo : '))
+        c = eval(input('Enter a   c valuo :'))
+        while (type(c) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            c = eval(input('Again Enter a : C-valuo : '))
+        print('Your equation looks :', a, 'x^2+', b, 'x+', c)
+        start_x_valuoe = eval(input('Enter the start x valuo that you want to check?'))
+        while (type(start_x_valuoe) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            start_x_valuoe = eval(input('Again Enter a : start_x_valuo : '))
+        end_x_valuoe = eval(input('Enter the end x valuo that you want to check?'))
+        while (type(end_x_valuoe) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            end_x_valuoe = eval(input('Again Enter a : end_x_valuo : '))
+        print('You are want to use quardratic equation ..')
+        if start_x_valuoe < 0 and end_x_valuoe >= 0:
+            # if start_x_valuoe<0 and end_x_valuoe==0:
+            list_x = []
+            list_y = []
+            x = start_x_valuoe
+            list_x.append(x)
+            # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+            total_x_valuoe = -start_x_valuoe + end_x_valuoe
+            for i in range(total_x_valuoe):
+                # x = eval (input ('Enter  x value : '))
+                x = x + 1
+                list_x.append(x)
+            print('Your x values are :', list_x)
+            for i in range(len(list_x)):
+                y = (a * (list_x[i] ** 2)) + b * (list_x[i]) + c
+                list_y.append(y)
+            print('Your y values are :', list_y)
+        elif start_x_valuoe >= 0 and end_x_valuoe <= 0:
+            # if end_x_valuoe==0:
+            list_x = []
+            list_y = []
+            x = start_x_valuoe
+            list_x.append(x)
+            total_x_valuoe = start_x_valuoe - end_x_valuoe
+            # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+            for i in range(total_x_valuoe):
+                # x = eval (input ('Enter  x value : ')
+                x = x - 1
+                list_x.append(x)
+            print('Your x values are :', list_x)
+            for i in range(len(list_x)):
+                y = (a * (list_x[i] ** 2)) + b * (list_x[i]) + c
+                list_y.append(y)
+            print('Your y values are :', list_y)
+        elif start_x_valuoe > 0 and end_x_valuoe > 0:
+            if start_x_valuoe > end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # total_x_valuoe=start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe, -1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x - 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = (a * (list_x[i] ** 2)) + b * (list_x[i]) + c
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            elif start_x_valuoe < end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x + 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = (a * (list_x[i] ** 2)) + b * (list_x[i]) + c
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            else:
+                pass
+        elif start_x_valuoe < 0 and end_x_valuoe < 0:
+            if end_x_valuoe < start_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # end_x_valuoe_final=-start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe, -1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x - 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = (a * (list_x[i] ** 2)) + b * (list_x[i]) + c
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            elif end_x_valuoe > start_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # end_x_valuoe_final=-start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x + 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = (a * (list_x[i] ** 2)) + b * (list_x[i]) + c
+                    list_y.append(y)
+                    print('Your y values are :', list_y)
+            else:
+                pass
+        else:
+            pass
+        domain = input('Are  You want to check its domain and range?yes press (y)/no press(n)')
+        if domain == 'y' or domain == "Y":
+            print('The domain  of Given equation is (-infinty    +infinty)')
+            d = (b ** 2) - (4 * a * c)
+            Range = -(d / (4 * a))
+            if (a < 0):
+                print('The Range  of Given equation is [', Range, '   ', '-infinty)')
+            else:
+                print('The Range of Given equation is [', Range, '    ', '+infinty)')
+        elif domain == 'N' or domain == "n":
+            print('okay you don"t want to check domain and Range')
+        else:
+            print('invalid')
+        plt.plot(list_x, list_y)
+        plt.show()
+    elif (button_0 == 4):
+
+        print('The Expontial equation just like (y=a**(bx+d)+c)')
+        print("Note:Don't Enter valuo in points or floating data type")
+        a = eval(input('Enter a   a valuo : '))
+        while (a == 0 or type(a) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            a = eval(input('Again Enter a   a-valuo : '))
+        b = eval(input('Enter a   b valuo :'))
+        while (type(b) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            b = eval(input('Again Enter a  : b-valuo : '))
+        c = eval(input('Enter a   c valuo :'))
+        while (type(c) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            c = eval(input('Again Enter a : C-valuo : '))
+        d = eval(input('Enter a   d valuo :'))
+        while (type(d) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            d = eval(input('Again Enter a : d-valuo : '))
+        print('Your equation looks : y=', a, '^(', b, 'x+', d, ')+', c)
+        start_x_valuoe = eval(input('Enter the starting x valuo that you want to check? '))
+        while type(start_x_valuoe) == float:
+            print(
+                'Your input valuo is in floating data type.so it will be a program error...so input your valuo in integer data type')
+            start_x_valuoe = eval(input('Enter the starting x valuo that you want to check? '))
+        else:
+            pass
+        end_x_valuoe = eval(input('Enter the ending x valuo that you want to check? '))
+        while type(end_x_valuoe) == float:
+            print(
+                'Your input valuo is in floating data type.so it will be a program error...so input your valuo in integer data type')
+            end_x_valuoe = eval(input('Enter the starting x valuo that you want to check? '))
+        else:
+            pass
+        if start_x_valuoe < 0 and end_x_valuoe >= 0:
+            # if start_x_valuoe<0 and end_x_valuoe==0:
+            list_x = []
+            list_y = []
+            x = start_x_valuoe
+            list_x.append(x)
+            # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+            total_x_valuoe = -start_x_valuoe + end_x_valuoe
+            for i in range(total_x_valuoe):
+                # x = eval (input ('Enter  x value : '))
+                x = x + 1
+                list_x.append(x)
+            print('Your x values are :', list_x)
+            for i in range(len(list_x)):
+                # y = (a*(list_x[i]**2)) + b*(list_x[i])+c
+                y = (a ** (b * (list_x[i]) + d) + c)
+                list_y.append(y)
+            print('Your y values are :', list_y)
+        elif start_x_valuoe >= 0 and end_x_valuoe <= 0:
+            # if end_x_valuoe==0:
+            list_x = []
+            list_y = []
+            x = start_x_valuoe
+            list_x.append(x)
+            total_x_valuoe = start_x_valuoe - end_x_valuoe
+            # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+            for i in range(total_x_valuoe):
+                # x = eval (input ('Enter  x value : ')
+                x = x - 1
+                list_x.append(x)
+            print('Your x values are :', list_x)
+            for i in range(len(list_x)):
+                # y = (a*(list_x[i]**2)) + b*(list_x[i])+c
+                y = (a ** (b * (list_x[i]) + d) + c)
+                list_y.append(y)
+            print('Your y values are :', list_y)
+        elif start_x_valuoe > 0 and end_x_valuoe > 0:
+            if start_x_valuoe > end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # total_x_valuoe=start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+
+                for i in range(start_x_valuoe, end_x_valuoe, -1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x - 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    # y = (a*(list_x[i]**2)) + b*(list_x[i])+c
+                    y = (a ** (b * (list_x[i]) + d) + c)
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            elif start_x_valuoe < end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                start_x_valuoe = float(start_x_valuoe)
+                end_x_valuoe = float(end_x_valuoe)
+                for i in range(start_x_valuoe, end_x_valuoe, 1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x + 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    # y = (a*(list_x[i]**2)) + b*(list_x[i])+c
+                    y = (a ** (b * (list_x[i]) + d) + c)
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            else:
+                pass
+        elif start_x_valuoe < 0 and end_x_valuoe < 0:
+            if end_x_valuoe < start_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # end_x_valuoe_final=-start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe, -1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x - 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    # y = (a*(list_x[i]**2)) + b*(list_x[i])+c
+                    y = (a ** (b * (list_x[i]) + d) + c)
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            elif end_x_valuoe > start_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # end_x_valuoe_final=-start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x + 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    # y = (a*(list_x[i]**2)) + b*(list_x[i])+c
+                    y = (a ** (b * (list_x[i]) + d) + c)
+                    list_y.append(y)
+                    print('Your y values are :', list_y)
+            else:
+                pass
+        else:
+            pass
+        domain = input('Are  You want to check its domain and range?yes press (y)/no press(n)')
+        if domain == 'y' or domain == "Y":
+            print('The domain  of Given equation is ( -infinty    +infinty)')
+            if a >= 0:
+                print('The Range  of Given equation is [', c, '    +infinty)')
+            else:
+                print('The Range of Given equation is [-infinity    ', c, ']')
+        elif domain == 'N' or domain == "n":
+            print('okay you don"t want to check domain and Range')
+        else:
+            print('invalid')
+        plt.plot(list_x, list_y)
+        plt.show()
+    elif (button_0==5):
+        print('We are really sorry..there is some issues so that is why it"s not working yet!!')
+
+    elif (button_0 == 3):
+        print("Your logritumic equation looks : y=log base (x)")
+        print("don't Enter valuo in float data type")
+        base = eval(input('Enter a base of logritumic equation : '))
+        while (type(base) == float):
+            print("Your Enter valuo in floating data type...So it will be a program error ")
+            base = eval('Enter a again base-valuo: ')
+        print("Your equation looks:y=log", base, '(x)')
+        print('NOTE: don"t input staring or ending x valuo less or equal to zero because log will undefined ')
+        start_x_valuoe = eval(input('Enter the starting x valuo that you want to check? '))
+        while (start_x_valuoe <= 0 or type(start_x_valuoe) == float):
+            if (start_x_valuoe < 0):
+                print('Your input valuo is less then then zero.so function is undefined ')
+                start_x_valuoe = eval(input('Enter the starting x valuo that you want to check? '))
+            elif (type(start_x_valuoe) == float):
+                print(
+                    'Your input valuo is in floating data type.so it will be a program error...so input your valuo in integer data type')
+                start_x_valuoe = eval(input('Enter the starting x valuo that you want to check? '))
+            else:
+                print('Your input valuo is equal zero.so function is undefined ')
+                start_x_valuoe = eval(input('Enter the starting x valuo that you want to check? '))
+        end_x_valuoe = eval(input('Enter the ending x valuo that you want to check? '))
+        while (end_x_valuoe <= 0 or type(end_x_valuoe) == float):
+            if (end_x_valuoe < 0):
+                print('Your input valuo is less then then zero.so function is undefined ')
+                end_x_valuoe = eval(input('Enter the starting x valuo that you want to check? '))
+            elif (type(end_x_valuoe) == float):
+                print(
+                    'Your input valuo is in floating data type.so it will be a program error...so input your valuo in integer data type')
+                end_x_valuoe = eval(input('Enter the ending x valuo that you want to check? '))
+            else:
+                print('Your input valuo is equal zero.so function is undefined ')
+                end_x_valuoe = eval(input('Enter the starting x valuo that you want to check? '))
+        if start_x_valuoe > 0 and end_x_valuoe > 0:
+            if start_x_valuoe > end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # total_x_valuoe=start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe, -1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x - 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    import math
+
+                    y = math.log(list_x[i], base)
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            elif start_x_valuoe < end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x + 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    import math
+
+                    y = math.log(list_x[i], base)
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            else:
+                pass
+        else:
+            pass
+        domain = input('Are  You want to check its domain and range?yes press (y)/no press(n)')
+        if domain == 'y' or domain == "Y":
+            print('The domain  of Given equation is ( -infinty    +infinty)')
+            print('The Range  of Given equation is [0    +infinty)')
+        elif domain == 'n' or domain == "N":
+            print('okay you don"t want to check domain and Range')
+        else:
+            print('invalid')
+        plt.plot(list_x, list_y)
+        plt.show()
+    elif button_0 == 6:
+        print("3rd degree polynomial equation looks:ax^3+bx^2+cx+d")
+        print("Note:Don't Enter valuo in points or floating data type")
+        a = eval(input('Enter a   a valuo : '))
+        while (a == 0 or type(a) == float):
+            if a == 0:
+                print(
+                    'your input valuo is equal to zero so it will become a  quardratic function.so it is better to used quardratic function')
+                a = eval(input('Again Enter a   a valuo : '))
+            elif type(a) == float:
+                print('your input valuo is in floating data type.So it will be a program error')
+                a = eval(input('Again Enter a   a-valuo : '))
+        b = eval(input('Enter a   b valuo :'))
+        while (type(b) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            b = eval(input('Again Enter a  : b-valuo : '))
+        c = eval(input('Enter a   c valuo :'))
+        while (type(c) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            c = eval(input('Again Enter a : C-valuo : '))
+        d = eval(input('Enter a   d valuo :'))
+        while (type(d) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            d = eval(input('Again Enter a : d-valuo : '))
+        print('Your equation looks', a, 'x^3+', b, 'x^2+', c, 'x+', d)
+        start_x_valuoe = eval(input('Enter the start x valuo that you want to check?'))
+        while (type(start_x_valuoe) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            start_x_valuoe = eval(input('Again Enter a : start_x_valuo : '))
+        end_x_valuoe = eval(input('Enter the end x valuo that you want to check?'))
+        while (type(end_x_valuoe) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            end_x_valuoe = eval(input('Again Enter a : end_x_valuo : '))
+
+        if start_x_valuoe < 0 and end_x_valuoe >= 0:
+            # if start_x_valuoe<0 and end_x_valuoe==0:
+            list_x = []
+            list_y = []
+            x = start_x_valuoe
+            list_x.append(x)
+            # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+            total_x_valuoe = -start_x_valuoe + end_x_valuoe
+            for i in range(total_x_valuoe):
+                # x = eval (input ('Enter  x value : '))
+                x = x + 1
+                list_x.append(x)
+            print('Your x values are :', list_x)
+            for i in range(len(list_x)):
+                y = ((a * (list_x[i] ** 3)) + (b * (list_x[i] ** 2)) + (c * (list_x[i])) + d)
+                list_y.append(y)
+            print('Your y values are :', list_y)
+        elif start_x_valuoe >= 0 and end_x_valuoe <= 0:
+            # if end_x_valuoe==0:
+            list_x = []
+            list_y = []
+            x = start_x_valuoe
+            list_x.append(x)
+            total_x_valuoe = start_x_valuoe - end_x_valuoe
+            # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+            for i in range(total_x_valuoe):
+                # x = eval (input ('Enter  x value : ')
+                x = x - 1
+                list_x.append(x)
+            print('Your x values are :', list_x)
+            for i in range(len(list_x)):
+                y = ((a * (list_x[i] ** 3)) + (b * (list_x[i] ** 2)) + (c * (list_x[i])) + d)
+                list_y.append(y)
+            print('Your y values are :', list_y)
+        elif start_x_valuoe > 0 and end_x_valuoe > 0:
+            if start_x_valuoe > end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # total_x_valuoe=start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe, -1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x - 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = ((a * (list_x[i] ** 3)) + (b * (list_x[i] ** 2)) + (c * (list_x[i])) + d)
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            elif start_x_valuoe < end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x + 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = ((a * (list_x[i] ** 3)) + (b * (list_x[i] ** 2)) + (c * (list_x[i])) + d)
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            else:
+                pass
+        elif start_x_valuoe < 0 and end_x_valuoe < 0:
+            if end_x_valuoe < start_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # end_x_valuoe_final=-start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe, -1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x - 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = ((a * (list_x[i] ** 3)) + (b * (list_x[i] ** 2)) + (c * (list_x[i])) + d)
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            elif end_x_valuoe > start_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # end_x_valuoe_final=-start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x + 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    # y = (a*(list_x[i]**2)) + b*(list_x[i])+c
+                    y = ((a * (list_x[i] ** 3)) + (b * (list_x[i] ** 2)) + (c * (list_x[i])) + d)
+                    list_y.append(y)
+                    print('Your y values are :', list_y)
+            else:
+                pass
+        else:
+            pass
+        domain = input('Are  You want to check its domain and range?yes press (y)/no press(n)')
+        if domain == 'y' or domain == "Y":
+            print('The domain  of Given equation is (-infinty    +infinty)')
+            print('The Range  of Given equation is (-infinty    +infinty)')
+        elif domain == 'N' or domain == "n":
+            print('okay you don"t want to check domain and Range')
+        else:
+            print('invalid')
+        plt.plot(list_x, list_y)
+        plt.show()
+    elif button_0 == 7:
+        print("4th degree polynomial equation looks:ax^4+bx^3+cx^2+dx+e")
+        print("Note:Don't Enter valuo in points or floating data type")
+        a = eval(input('Enter a   a valuo : '))
+        while (a == 0 or type(a) == float):
+            if a == 0:
+                print(
+                    'your input valuo is equal to zero so it will become a third degree function.so it is better to used third function')
+                a = eval(input('Again Enter a   a valuo : '))
+            elif type(a) == float:
+                print('your input valuo is in floating data type.So it will be a program error')
+                a = eval(input('Again Enter a   a-valuo : '))
+        b = eval(input('Enter a   b valuo :'))
+        while (type(b) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            b = eval(input('Again Enter a  : b-valuo : '))
+        c = eval(input('Enter a   c valuo :'))
+        while (type(c) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            c = eval(input('Again Enter a : C-valuo : '))
+        d = eval(input('Enter a   d valuo :'))
+        while (type(d) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            d = eval(input('Again Enter a : d-valuo : '))
+        e = eval(input('Enter a   e-valuo :'))
+        while (type(e) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            e = eval(input('Again Enter a : e-valuo : '))
+        print('Your equation looks', a, 'x^4+', b, 'x^3+', c, 'x^2+', d, 'x+', e)
+        start_x_valuoe = eval(input('Enter the start x valuo that you want to check?'))
+        while (type(start_x_valuoe) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            start_x_valuoe = eval(input('Again Enter a : start_x_valuo : '))
+        end_x_valuoe = eval(input('Enter the end x valuo that you want to check?'))
+        while (type(end_x_valuoe) == float):
+            print('your input valuo is in floating data type.So it will be a program error')
+            end_x_valuoe = eval(input('Again Enter a : end_x_valuo : '))
+
+        if start_x_valuoe < 0 and end_x_valuoe >= 0:
+            # if start_x_valuoe<0 and end_x_valuoe==0:
+            list_x = []
+            list_y = []
+            x = start_x_valuoe
+            list_x.append(x)
+            # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+            total_x_valuoe = -start_x_valuoe + end_x_valuoe
+            for i in range(total_x_valuoe):
+                # x = eval (input ('Enter  x value : '))
+                x = x + 1
+                list_x.append(x)
+            print('Your x values are :', list_x)
+            for i in range(len(list_x)):
+                y = ((a * (list_x[i] ** 4)) + (b * (list_x[i] ** 3)) + (c * (list_x[i] ** 2)) + (d * (list_x[i])) + e)
+                list_y.append(y)
+            print('Your y values are :', list_y)
+        elif start_x_valuoe >= 0 and end_x_valuoe <= 0:
+            # if end_x_valuoe==0:
+            list_x = []
+            list_y = []
+            x = start_x_valuoe
+            list_x.append(x)
+            total_x_valuoe = start_x_valuoe - end_x_valuoe
+            # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+            for i in range(total_x_valuoe):
+                # x = eval (input ('Enter  x value : ')
+                x = x - 1
+                list_x.append(x)
+            print('Your x values are :', list_x)
+            for i in range(len(list_x)):
+                y = ((a * (list_x[i] ** 4)) + (b * (list_x[i] ** 3)) + (c * (list_x[i] ** 2)) + (d * (list_x[i])) + e)
+                list_y.append(y)
+            print('Your y values are :', list_y)
+        elif start_x_valuoe > 0 and end_x_valuoe > 0:
+            if start_x_valuoe > end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # total_x_valuoe=start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe, -1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x - 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = ((a * (list_x[i] ** 4)) + (b * (list_x[i] ** 3)) + (c * (list_x[i] ** 2)) + (
+                                d * (list_x[i])) + e)
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            elif start_x_valuoe < end_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x + 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = ((a * (list_x[i] ** 4)) + (b * (list_x[i] ** 3)) + (c * (list_x[i] ** 2)) + (
+                                d * (list_x[i])) + e)
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            else:
+                pass
+        elif start_x_valuoe < 0 and end_x_valuoe < 0:
+            if end_x_valuoe < start_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # end_x_valuoe_final=-start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe, -1):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x - 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = ((a * (list_x[i] ** 4)) + (b * (list_x[i] ** 3)) + (c * (list_x[i] ** 2)) + (
+                                d * (list_x[i])) + e)
+                    list_y.append(y)
+                print('Your y values are :', list_y)
+            elif end_x_valuoe > start_x_valuoe:
+                list_x = []
+                list_y = []
+                x = start_x_valuoe
+                list_x.append(x)
+                # end_x_valuoe_final=-start_x_valuoe-end_x_valuoe
+                # print('Enter ', i, 'x value (max value', total_x_valuoe, ')')
+                for i in range(start_x_valuoe, end_x_valuoe):
+                    # x = eval (input ('Enter  x value : '))
+                    x = x + 1
+                    list_x.append(x)
+                print('Your x values are :', list_x)
+                for i in range(len(list_x)):
+                    y = ((a * (list_x[i] ** 4)) + (b * (list_x[i] ** 3)) + (c * (list_x[i] ** 2)) + (
+                                d * (list_x[i])) + e)
+                    list_y.append(y)
+                    print('Your y values are :', list_y)
+            else:
+                pass
+        else:
+            pass
+
+        plt.plot(list_x, list_y)
+        plt.show()
+
+    n = input('Are you want to use again? yes press(y)/no press(n)')
