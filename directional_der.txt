@@ -1,0 +1,59 @@
+import sympy as sp
+import numpy as np
+import math
+
+x, y, z = sp.symbols('x y z')
+function = input('Enter the function: ')
+print('Input your points (a, b, c)')
+points = input('If the points are given--(press y for yes)/(press N for No) ')
+a = 0
+b = 0
+c = 0
+if points == 'y':
+    a = float(input('Enter the Point a value: '))
+    b = float(input('Enter the Point b value: '))
+    c = float(input('Enter the Point c value: '))
+    print('Your points are: (', a, ',', b, ',', c, ')')
+else:
+    pass
+print('Enter the directional vector: (xi, yj, zk) ')
+x_val = int(input('Enter the value of x: '))
+y_val = int(input('Enter the value of y: '))
+z_val = int(input('Enter the value of z: '))
+mag_dir_vector = math.sqrt((x_val ** 2) + (y_val ** 2) + (z_val ** 2))
+mag_dir_vector = int(mag_dir_vector)
+if mag_dir_vector != 1:
+    x_val = x_val / mag_dir_vector
+    y_val = y_val / mag_dir_vector
+    z_val = z_val / mag_dir_vector
+else:
+    pass
+mag_dir_vector = int(x_val + y_val + z_val)
+dir_vector = np.array([x_val, y_val, z_val])
+der_x = sp.diff(function, x)
+der_y = sp.diff(function, y)
+der_z = sp.diff(function, z)
+grad_v = [der_x, der_y, der_z]
+simp_x = sp.sympify(der_x)
+# result = simp_x.subs({x: a, y: b, z: c})
+simp_y = sp.sympify(der_y)
+# result2 = simp_y.subs({x: a, y: b, z: c})
+simp_z = sp.sympify(der_z)
+# result3 = simp_z.subs({x: a, y: b, z: c})
+if points == 'y':
+    result = simp_x.subs({x: a, y: b, z: c})
+    result2 = simp_y.subs({x: a, y: b, z: c})
+    result3 = simp_z.subs({x: a, y: b, z: c})
+    grad_fun = np.array([result, result2, result3])
+else:
+    grad_fun = np.array([simp_x, simp_y, simp_z])  # Use the computed results
+G_check = input('Are you want to check the gradient vector of your function? (yes press y/no press n) ')
+if G_check == 'y':
+    print('Gradient of your input function is :', grad_v)
+else:
+    pass
+D_check = input('Are you want to find the directional derivative? (yes press y/no press n)')
+dir_der = np.dot(grad_fun, dir_vector)  # Use np.dot for the dot product
+if D_check == 'y':
+    print('So your input vector is ', dir_vector)
+    print('The directional derivative of your input function is :', dir_der)
