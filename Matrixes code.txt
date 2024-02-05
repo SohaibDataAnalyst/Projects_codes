@@ -1,0 +1,673 @@
+print('NOTE :')
+print('For Adding or substruction of two matrix must be equal rows and coloumns.')
+print('Also for determiant and Coffectors of your matrix must be equal.')
+rows=eval(input('\nEnter a Total row of your matrix(maximum-5 row you can input) : '))
+while rows>=6:
+    print('Sorry your input rows is out of range.')
+    rows=eval(input('Again,Enter a Total row of your matrix: '))
+coloumns=eval(input("Enter a Total coloumns of your matrix : "))
+if rows==1:
+    list_row_first=[]
+elif rows==2:
+    list_row_first=[]
+    list_row_second=[]
+elif rows==3:
+    list_row_first=[]
+    list_row_second=[]
+    list_row_third=[]
+elif rows==4:
+    list_row_first=[]
+    list_row_second=[]
+    list_row_third=[]
+    list_row_fourth=[]
+elif rows==5:
+    list_row_first=[]
+    list_row_second=[]
+    list_row_third=[]
+    list_row_fourth=[]
+    list_row_fiveth=[]
+else:
+    print('sorry your input rows is out of range.')
+for i in range(1,rows+1):  #rows
+    if i==1:
+        print('Enter first row elements')
+        for j in range(1,coloumns+1):  # coloumns
+            print('Enter a a1'+str(j),end=' ')
+            a=eval(input())
+            list_row_first.append(a)
+    elif i==2:
+        print('Enter second row elements')
+        for j in range(1,coloumns+1):  # coloumns
+            print('Enter a a2'+str(j),end=' ')
+            a=eval(input())
+            list_row_second.append(a)
+    elif i==3:
+        print('Enter Third row elements')
+        for j in range(1,coloumns+1):  # coloumns
+            print('Enter a a3'+str(j),end=' ')
+            a=eval(input())
+            list_row_third.append(a)
+    elif i==4:
+        print('Enter fourth row elements')
+        for j in range(1,coloumns+1):  # coloumns
+            print('Enter a a4'+str(j),end=' ')
+            a=eval(input())
+            list_row_fourth.append(a)
+    elif i==5:
+        print('Enter fivth row elements')
+        for j in range(1,coloumns+1): # coloumns
+            print('Enter a a5'+str(j),end=' ')
+            a=eval(input())
+            list_row_fiveth.append(a)
+print('\n')
+print('your first matrix is :','\n')
+if rows==1:
+    print('|',end=" ")
+    for i in list_row_first:
+        print(i,end=" ")
+    print("|")
+elif rows==2:
+    print('|',end=" ")
+    for i in list_row_first:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_second:
+        print(i,end=" ")
+    print("|")
+elif rows==3:
+    print('|',end=" ")
+    for i in list_row_first:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_second:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_third:
+        print(i,end=" ")
+    print("|")
+elif rows==4:
+    print('|',end=" ")
+    for i in list_row_first:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_second:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_third:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_fourth:
+        print(i,end=" ")
+    print("|")
+elif rows==5:
+    print('|',end=" ")
+    for i in list_row_first:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_second:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_third:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_fourth:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_fiveth:
+        print(i,end=" ")
+    print("|")
+else:
+    print('sorry your input rows is out of range.')
+if rows==coloumns: 
+    if (rows==2 and coloumns==2):
+        Coffectors_checker=input('Are you want to check Coffectors of your matrix?yes(press-Y)/No(press-N)')
+        if Coffectors_checker=='y' or Coffectors_checker=='Y':
+            print('\nCoffectors of your first matrix is :')                 #Coffectors
+            first_coffector_of_first_matrix=(list_row_second[1])
+            second_coffector_of_first_matrix=-(list_row_first[1])
+            Third_coffector_of_first_matrix=-(list_row_second[0])
+            fourth_coffector_of_first_matrix=(list_row_first[0])
+            print('Coffectors of your matrix is(adj-matrix):')
+            print('|',first_coffector_of_first_matrix,'    ',second_coffector_of_first_matrix,'|')
+            print('|',Third_coffector_of_first_matrix,'    ',fourth_coffector_of_first_matrix,'|')
+        elif Coffectors_checker=='n' or Coffectors_checker=='N':
+            print('Okay,you dont check Coffectors.')
+        else:
+            print('invalid')
+        determiant_check=input('\nAre you want to check its determiant?yes press(Y) / No press(N)')
+        if determiant_check=='y' or determiant_check=='Y':
+            determiant_of_twobytwo_matrix=(list_row_first[0]*list_row_second[1])-(list_row_first[1]*list_row_second[0])
+            print('Determianat of 2by2 matrix is',determiant_of_twobytwo_matrix)
+        elif determiant_check=="n" or determiant_check=='N':
+            print('Ok,you dont want to check 2by2 matirx determiant')
+        else:
+            print('invalid')
+                
+    
+    
+    elif( rows==3 and coloumns==3):
+        Coffectors_checker=input('Are you want to check Coffectors and Adjoint of your matrix?yes(press-Y)/No(press-N)')
+        if Coffectors_checker=='y' or Coffectors_checker=='Y':
+            print('\nCoffectors of your first matrix is :')                 #Coffectors
+            first_coffector_of_first_matrix=list_row_first[0]*((list_row_second[1]*list_row_third[2])-(list_row_second[2]*list_row_third[1]))
+            second_coffector_of_first_matrix=(-list_row_first[1])*((list_row_second[0]*list_row_third[2])-(list_row_second[2]*list_row_third[0]))
+            Third_coffector_of_first_matrix=list_row_first[2]*((list_row_second[0]*list_row_third[1])-(list_row_second[1]*list_row_third[0]))
+            fourth_coffector_of_first_matrix=(-list_row_second[0])*((list_row_first[1]*list_row_third[2])-(list_row_first[2]*list_row_third[1]))
+            fivth_coffector_of_first_matrix=list_row_second[1]*((list_row_first[0]*list_row_third[2])-(list_row_first[2]*list_row_third[0]))
+            sixth_coffector_of_first_matrix=(-list_row_second[2])*((list_row_first[0]*list_row_third[1])-(list_row_first[1]*list_row_third[0]))
+            seventh_coffector_of_first_matrix=list_row_third[0]*((list_row_first[1]*list_row_second[2])-(list_row_first[2]*list_row_second[1]))
+            eighth_coffector_of_first_matrix=(-list_row_third[1])*((list_row_first[0]*list_row_second[2])-(list_row_first[2]*list_row_second[0]))
+            nineth_coffector_of_first_matrix=list_row_third[2]*((list_row_first[0]*list_row_second[1])-(list_row_first[1]*list_row_second[0]))
+            print('|',first_coffector_of_first_matrix,'    ',second_coffector_of_first_matrix,'   ',Third_coffector_of_first_matrix,'|')
+            print('|',fourth_coffector_of_first_matrix,'    ',fivth_coffector_of_first_matrix,'   ',sixth_coffector_of_first_matrix,'|')
+            print('|',seventh_coffector_of_first_matrix,'    ',eighth_coffector_of_first_matrix,'   ',nineth_coffector_of_first_matrix,'|')
+            print('\n','adjoind of matrix is:')
+            print('|',first_coffector_of_first_matrix,'    ',fourth_coffector_of_first_matrix,'   ',seventh_coffector_of_first_matrix,'|')
+            print('|',second_coffector_of_first_matrix,'    ',fivth_coffector_of_first_matrix,'   ',eighth_coffector_of_first_matrix,'|')
+            print('|',Third_coffector_of_first_matrix,'    ',sixth_coffector_of_first_matrix,'   ',nineth_coffector_of_first_matrix,'|')
+        elif Coffectors_checker=='n' or Coffectors_checker=='N':
+            print('Okay,you dont check Coffectors.')
+        else:
+            print('invalid')
+        determiant_check=input('\nAre you want to check its determiant?yes press(Y) / No press(N)')
+        if determiant_check=='y' or determiant_check=='Y':
+            list_first_matrix_first_row=[list_row_first[0],list_row_first[1],list_row_first[2],list_row_first[0],list_row_first[1]]
+            list_first_matrix_second_row=[list_row_second[0],list_row_second[1],list_row_second[2],list_row_second[0],list_row_second[1]]
+            list_first_matrix_third_row=[list_row_third[0],list_row_third[1],list_row_third[2],list_row_third[0],list_row_third[1]]
+            determiant_of_threebythree_matrix=(list_first_matrix_first_row[0]*list_first_matrix_second_row[1]*list_first_matrix_third_row[2])+(list_first_matrix_first_row[1]*list_first_matrix_second_row[2]*list_first_matrix_third_row[3])+(list_first_matrix_first_row[2]*list_first_matrix_second_row[3]*list_first_matrix_third_row[4])-(list_first_matrix_first_row[4]*list_first_matrix_second_row[3]*list_first_matrix_third_row[2])-(list_first_matrix_first_row[3]*list_first_matrix_second_row[2]*list_first_matrix_third_row[1])-(list_first_matrix_first_row[2]*list_first_matrix_second_row[1]*list_first_matrix_third_row[0])
+            print('Determianat of 3by3 matrix is',determiant_of_threebythree_matrix)
+        elif determiant_check=="n" or determiant_check=='N':
+            print('Ok,you dont want to check 3by3 matirx determiant')
+        else:
+            print('invalid')    
+    
+    elif (rows==4 and coloumns==4):
+        print('Sorry, 4by4 matrix is too much complex.So Coffectors cannot be genraeted ')
+        determiant_check=input('\nBut Are you want to check its determiant?yes press(Y) / No press(N)')          #using arrow method
+        if determiant_check=='y' or determiant_check=='Y':
+            list_first_matrix_first_row=[list_row_first[0],list_row_first[1],list_row_first[2],list_row_first[3],list_row_first[0],list_row_first[1]]
+            list_first_matrix_second_row=[list_row_second[0],list_row_second[1],list_row_second[2],list_row_second[3],list_row_second[0],list_row_second[1]]
+            list_first_matrix_third_row=[list_row_third[0],list_row_third[1],list_row_third[2],list_row_third[3],list_row_third[0],list_row_third[1]]
+            list_first_matrix_fourth_row=[list_row_fourth[0],list_row_fourth[1],list_row_fourth[2],list_row_fourth[3],list_row_fourth[0],list_row_fourth[1]]
+            determiant_of_fourbyfour_matrix=(list_first_matrix_first_row[0]*list_first_matrix_second_row[1]*list_first_matrix_third_row[2]*list_first_matrix_fourth_row[3])+(list_first_matrix_first_row[1]*list_first_matrix_second_row[2]*list_first_matrix_third_row[3]*list_first_matrix_fourth_row[4])+(list_first_matrix_first_row[2]*list_first_matrix_second_row[3]*list_first_matrix_third_row[4]*list_first_matrix_fourth_row[5])-(list_first_matrix_first_row[5]*list_first_matrix_second_row[4]*list_first_matrix_third_row[3]*list_first_matrix_fourth_row[2])-(list_first_matrix_first_row[4]*list_first_matrix_second_row[3]*list_first_matrix_third_row[2]*list_first_matrix_fourth_row[1])-(list_first_matrix_first_row[3]*list_first_matrix_second_row[2]*list_first_matrix_third_row[1]*list_first_matrix_fourth_row[0])
+            print('Determianat of your 4by4 matrix is',determiant_of_fourbyfour_matrix)
+        elif determiant_check=="n" or determiant_check=='N':
+            print('Ok,you dont want to check 4by4 matirx determiant')
+        else:
+            print('invalid')
+    elif (rows==5 and coloumns==5):
+        print('Sorry, 5by5 matrix is too much complex.So Coffectors cannot be genraeted ')
+        determiant_check=input('\nBut Are you want to check its determiant?yes press(Y) / No press(N)')      #using arrow method
+        if determiant_check=='y' or determiant_check=='Y':
+            list_first_matrix_first_row=[list_row_first[0],list_row_first[1],list_row_first[2],list_row_first[3],list_row_first[4],list_row_first[0],list_row_first[1]]
+            list_first_matrix_second_row=[list_row_second[0],list_row_second[1],list_row_second[2],list_row_second[3],list_row_second[4],list_row_second[0],list_row_second[1]]
+            list_first_matrix_third_row=[list_row_third[0],list_row_third[1],list_row_third[2],list_row_third[3],list_row_third[4],list_row_third[0],list_row_third[1]]
+            list_first_matrix_fourth_row=[list_row_fourth[0],list_row_fourth[1],list_row_fourth[2],list_row_fourth[3],list_row_fourth[4],list_row_fourth[0],list_row_fourth[1]]
+            llist_first_matrix_fivth_row=[list_row_fiveth[0],list_row_fiveth[1],list_row_fiveth[2],list_row_fiveth[3],list_row_fiveth[4],list_row_fiveth[0],list_row_fiveth[1],]
+            determiant_of_fourbyfour_matrix=(list_first_matrix_first_row[0]*list_first_matrix_second_row[1]*list_first_matrix_third_row[2]*list_first_matrix_fourth_row[3]*llist_first_matrix_fivth_row[4])+(list_first_matrix_first_row[1]*list_first_matrix_second_row[2]*list_first_matrix_third_row[3]*list_first_matrix_fourth_row[4]*llist_first_matrix_fivth_row[5])+(list_first_matrix_first_row[2]*list_first_matrix_second_row[3]*list_first_matrix_third_row[4]*list_first_matrix_fourth_row[5]*llist_first_matrix_fivth_row[6])-(list_first_matrix_first_row[6]*list_first_matrix_second_row[5]*list_first_matrix_third_row[4]*list_first_matrix_fourth_row[3]*llist_first_matrix_fivth_row[2])-(list_first_matrix_first_row[5]*list_first_matrix_second_row[4]*list_first_matrix_third_row[3]*list_first_matrix_fourth_row[2]*llist_first_matrix_fivth_row[1])-(list_first_matrix_first_row[4]*list_first_matrix_second_row[3]*list_first_matrix_third_row[2]*list_first_matrix_fourth_row[1]*llist_first_matrix_fivth_row[0])
+            print('Determianat of your 5by5 matrix is',determiant_of_fourbyfour_matrix)
+        elif determiant_check=="n" or determiant_check=='N':
+            print('Ok,you dont want to check 5by5 matirx determiant')
+        else:
+            print('invalid')
+    else:
+        pass
+else:
+    print('Note: Only squre matrix of coffector and determiant can be find.')
+#second matrix
+
+rows_second_matrix=eval(input('\nEnter a Total row of your Second matrix(maximum-5 row you can input) : '))
+while rows_second_matrix>=6:
+    print('\nSorry your input rows is out of range.')
+    rows_second_matrix=eval(input('\nAgain,Enter a Total row of your Second matrix: '))
+coloumns_second_matrix=eval(input("\nEnter a Total coloumns of your Second matrix : "))
+if rows_second_matrix==1:
+    list_row_first_of_second_matrix=[]
+elif rows_second_matrix==2:
+    list_row_first_of_second_matrix=[]
+    list_row_second_of_second_matrix=[]
+elif rows_second_matrix==3:
+    list_row_first_of_second_matrix=[]
+    list_row_second_of_second_matrix=[]
+    list_row_third_of_second_matrix=[]
+elif rows_second_matrix==4:
+    list_row_first_of_second_matrix=[]
+    list_row_second_of_second_matrix=[]
+    list_row_third_of_second_matrix=[]
+    list_row_fourth_of_second_matrix=[]
+elif rows_second_matrix==5:
+    list_row_first_of_second_matrix=[]
+    list_row_second_of_second_matrix=[]
+    list_row_third_of_second_matrix=[]
+    list_row_fourth_of_second_matrix=[]
+    list_row_fiveth_of_second_matrix=[]
+else:
+    print('sorry your input rows is out of range.')
+print('\n')
+for i in range(1,rows_second_matrix+1):  #rows
+    if i==1:
+        print('Enter first row elements')
+        for j in range(1,coloumns_second_matrix+1):  # coloumns
+            print('Enter a a1'+str(j),end=' ')
+            a=eval(input())
+            list_row_first_of_second_matrix.append(a)
+    elif i==2:
+        print('Enter second row elements')
+        for j in range(1,coloumns_second_matrix+1):  # coloumns
+            print('Enter a a2'+str(j),end=' ')
+            a=eval(input())
+            list_row_second_of_second_matrix.append(a)
+    elif i==3:
+        print('Enter Third row elements')
+        for j in range(1,coloumns_second_matrix+1):  # coloumns
+            print('Enter a a3'+str(j),end=' ')
+            a=eval(input())
+            list_row_third_of_second_matrix.append(a)
+    elif i==4:
+        print('Enter fourth row elements')
+        for j in range(1,coloumns_second_matrix+1):  # coloumns
+            print('Enter a a4'+str(j),end=' ')
+            a=eval(input())
+            list_row_fourth_of_second_matrix.append(a)
+    elif i==5:
+        print('Enter fivth row elements')
+        for j in range(1,coloumns_second_matrix+1): # coloumns
+            print('Enter a a5'+str(j),end=' ')
+            a=eval(input())
+            list_row_fiveth_of_second_matrix.append(a)
+print('\n')
+print('Your second matrix is :','\n')
+if rows_second_matrix==1:
+    print('|',end=" ")
+    for i in list_row_first_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+elif rows_second_matrix==2:
+    print('|',end=" ")
+    for i in list_row_first_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_second_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+elif rows_second_matrix==3:
+    print('|',end=" ")
+    for i in list_row_first_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_second_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_third_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+elif rows_second_matrix==4:
+    print('|',end=" ")
+    for i in list_row_first_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_second_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_third_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_fourth_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+elif rows_second_matrix==5:
+    print('|',end=" ")
+    for i in list_row_first_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_second_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_third_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_fourth_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+    print('|',end=" ")
+    for i in list_row_fiveth_of_second_matrix:
+        print(i,end=" ")
+    print("|")
+else:
+    print('sorry your input rows is out of range.')
+if rows_second_matrix==coloumns_second_matrix:                           #Coffectors
+    if (rows_second_matrix==2 and coloumns_second_matrix==2):
+        Coffectors_checker=input('Are you want to check Coffectors of your matrix?yes(press-Y)/No(press-N)')
+        if Coffectors_checker=='y' or Coffectors_checker=='Y':
+            first_coffector_of_second_matrix=(list_row_first_of_second_matrix[0])
+            second_coffector_of_second_matrix=-(list_row_second_of_second_matrix[1])
+            Third_coffector_of_second_matrix=-(list_row_first_of_second_matrix[0])
+            fourth_coffector_of_second_matrix=(list_row_second_of_second_matrix[1])
+            print('\nCoffectors of your matrix is(adj-matrix):\n')
+            print('|',fourth_coffector_of_second_matrix,'    ',second_coffector_of_second_matrix,'|')
+            print('|',Third_coffector_of_second_matrix,'    ',first_coffector_of_second_matrix,'|')
+        elif Coffectors_checker=='N' or Coffectors_checker=="n":
+            print('Okay,you dont want to check its Coffectors or Adjoint of your matrix')
+        determiant_check=input('Are you want to check its determinat?yes(press y)/no(press n)')
+        if determiant_check=='y' or determiant_check=='y':
+            determiant_of_twobytwo_matrix=(list_row_first_of_second_matrix[0]*list_row_second_of_second_matrix[1])-(list_row_first_of_second_matrix[0]*list_row_second_of_second_matrix[1])
+            print('Determianat of twobytwo matrix is ',determiant_of_twobytwo_matrix)
+        elif  determiant_check=='n' or determiant_check=='N':
+            print('okay so you dont want to check its determinat.')
+        else:
+            print('invalid')
+    elif( rows_second_matrix==3 and coloumns_second_matrix==3):
+        Coffectors_checker=input('Are you want to check Coffectors and Adjoint of your matrix?yes(press-Y)/No(press-N)')
+        if Coffectors_checker=='y' or Coffectors_checker=='Y':
+            first_coffector_of_second_matrix=list_row_first_of_second_matrix[0]*((list_row_second_of_second_matrix[1]*list_row_third_of_second_matrix[2])-(list_row_second_of_second_matrix[2]*list_row_third_of_second_matrix[1]))
+            second_coffector_of_second_matrix=(-list_row_first_of_second_matrix[1])*((list_row_second_of_second_matrix[0]*list_row_third_of_second_matrix[2])-(list_row_second_of_second_matrix[2]*list_row_third_of_second_matrix[0]))
+            Third_coffector_of_second_matrix=list_row_first_of_second_matrix[2]*((list_row_second_of_second_matrix[0]*list_row_third_of_second_matrix[1])-(list_row_second_of_second_matrix[1]*list_row_third_of_second_matrix[0]))
+            fourth_coffector_of_second_matrix=(-(list_row_second_of_second_matrix[0]))*((list_row_first_of_second_matrix[1]*list_row_third_of_second_matrix[2])-(list_row_first_of_second_matrix[2]*list_row_third_of_second_matrix[1]))
+            fivth_coffector_of_second_matrix=list_row_second_of_second_matrix[1]*((list_row_first_of_second_matrix[0]*list_row_third_of_second_matrix[2])-(list_row_first_of_second_matrix[2]*list_row_third_of_second_matrix[0]))
+            sixth_coffector_of_second_matrix=(-(list_row_second_of_second_matrix[2]))*((list_row_first_of_second_matrix[0]*list_row_third_of_second_matrix[1])-(list_row_first_of_second_matrix[1]*list_row_third_of_second_matrix[0]))
+            seventh_coffector_of_second_matrix=list_row_third_of_second_matrix[0]*((list_row_first_of_second_matrix[1]*list_row_second_of_second_matrix[2])-(list_row_first_of_second_matrix[2]*list_row_second_of_second_matrix[1]))
+            eighth_coffector_of_second_matrix=(-(list_row_third_of_second_matrix[1]))*((list_row_first_of_second_matrix[0]*list_row_second_of_second_matrix[2])-(list_row_first_of_second_matrix[2]*list_row_second_of_second_matrix[0]))
+            nineth_coffector_of_second_matrix=list_row_third_of_second_matrix[2]*((list_row_first_of_second_matrix[0]*list_row_second_of_second_matrix[1])-(list_row_first_of_second_matrix[1]*list_row_second_of_second_matrix[0]))
+            print('\nCoffectors of your second matrix: \n')
+            print('|',first_coffector_of_second_matrix,'    ',second_coffector_of_second_matrix,'   ',Third_coffector_of_second_matrix,'|')
+            print('|',fourth_coffector_of_second_matrix,'    ',fivth_coffector_of_second_matrix,'   ',sixth_coffector_of_second_matrix,'|')
+            print('|',seventh_coffector_of_second_matrix,'    ',eighth_coffector_of_second_matrix,'   ',nineth_coffector_of_second_matrix,'|')
+            print('\n','Adjoint of your second matrix is:','\n')
+            print('|',first_coffector_of_second_matrix,'    ',fourth_coffector_of_second_matrix,'   ',seventh_coffector_of_second_matrix,'|')
+            print('|',second_coffector_of_second_matrix,'    ',fivth_coffector_of_second_matrix,'   ',eighth_coffector_of_second_matrix,'|')
+            print('|',Third_coffector_of_second_matrix,'    ',sixth_coffector_of_second_matrix,'   ',nineth_coffector_of_second_matrix,'|')
+        elif Coffectors_checker=='N' or Coffectors_checker=='n':
+            print('okay,so you dont want to check Coffectors and Adjoint of matrix')
+        else:
+            print('invalid')
+        determiant_check=input('\nBut Are you want to check its determiant?yes press(Y) / No press(N)')          #using arrow method
+        if determiant_check=='y' or determiant_check=='Y':
+            list_first_matrix_first_row=[list_row_first_of_second_matrix[0],list_row_first_of_second_matrix[1],list_row_first_of_second_matrix[2],list_row_first_of_second_matrix[0],list_row_first_of_second_matrix[1]]
+            list_first_matrix_second_row=[list_row_second_of_second_matrix[0],list_row_second_of_second_matrix[1],list_row_second_of_second_matrix[2],list_row_second_of_second_matrix[0],list_row_second_of_second_matrix[1]]
+            list_first_matrix_third_row=[list_row_third_of_second_matrix[0],list_row_third_of_second_matrix[1],list_row_third_of_second_matrix[2],list_row_third_of_second_matrix[0],list_row_third_of_second_matrix[1]]
+            determiant_of_threebythree_matrix=(list_first_matrix_first_row[0]*list_first_matrix_second_row[1]*list_first_matrix_third_row[2])+(list_first_matrix_first_row[1]*list_first_matrix_second_row[2]*list_first_matrix_third_row[3])+(list_first_matrix_first_row[2]*list_first_matrix_second_row[3]*list_first_matrix_third_row[4])-(list_first_matrix_first_row[4]*list_first_matrix_second_row[3]*list_first_matrix_third_row[2])-(list_first_matrix_first_row[3]*list_first_matrix_second_row[2]*list_first_matrix_third_row[1])-(list_first_matrix_first_row[2]*list_first_matrix_second_row[1]*list_first_matrix_third_row[0])
+        elif determiant_check=='N' or determiant_check=='n':
+            print('okay so you dont want to check its determiant.')
+        else:
+            print('invalid')
+    elif (rows==4 and coloumns==4):
+        print('Sorry, 4by4 matrix is too much complex.So Coffectors cannot be genraeted ')
+        determiant_check=input('\nBut Are you want to check its determiant?yes press(Y) / No press(N)')          #using arrow method
+        if determiant_check=='y' or determiant_check=='Y':
+            list_first_matrix_first_row=[list_row_first_of_second_matrix[0],list_row_first_of_second_matrix[1],list_row_first_of_second_matrix[2],list_row_first_of_second_matrix[3],list_row_first_of_second_matrix[0],list_row_first_of_second_matrix[1]]
+            list_first_matrix_second_row=[list_row_second_of_second_matrix[0],list_row_second_of_second_matrix[1],list_row_second_of_second_matrix[2],list_row_second_of_second_matrix[3],list_row_second_of_second_matrix[0],list_row_second_of_second_matrix[1]]
+            list_first_matrix_third_row=[list_row_third_of_second_matrix[0],list_row_third_of_second_matrix[1],list_row_third_of_second_matrix[2],list_row_third_of_second_matrix[3],list_row_third_of_second_matrix[0],list_row_third_of_second_matrix[1]]
+            list_first_matrix_fourth_row=[list_row_fourth_of_second_matrix[0],list_row_fourth_of_second_matrix[1],list_row_fourth_of_second_matrix[2],list_row_fourth_of_second_matrix[3],list_row_fourth_of_second_matrix[0],list_row_fourth_of_second_matrix[1]]
+            determiant_of_fourbyfour_matrix=(list_first_matrix_first_row[0]*list_first_matrix_second_row[1]*list_first_matrix_third_row[2]*list_first_matrix_fourth_row[3])+(list_first_matrix_first_row[1]*list_first_matrix_second_row[2]*list_first_matrix_third_row[3]*list_first_matrix_fourth_row[4])+(list_first_matrix_first_row[2]*list_first_matrix_second_row[3]*list_first_matrix_third_row[4]*list_first_matrix_fourth_row[5])-(list_first_matrix_first_row[5]*list_first_matrix_second_row[4]*list_first_matrix_third_row[3]*list_first_matrix_fourth_row[2])-(list_first_matrix_first_row[4]*list_first_matrix_second_row[3]*list_first_matrix_third_row[2]*list_first_matrix_fourth_row[1])-(list_first_matrix_first_row[3]*list_first_matrix_second_row[2]*list_first_matrix_third_row[1]*list_first_matrix_fourth_row[0])
+            print('Determianat of your 4by4 matrix is',determiant_of_fourbyfour_matrix)
+        elif determiant_check=="n" or determiant_check=='N':
+            print('Ok,you dont want to check 4by4 matirx determiant')
+        else:
+            print('invalid')
+    elif (rows==5 and coloumns==5):
+        print('Sorry, 5by5 matrix is too much complex.So Coffectors cannot be genraeted ')
+        determiant_check=input('\nBut Are you want to check its determiant?yes press(Y) / No press(N)')      #using arrow method
+        if determiant_check=='y' or determiant_check=='Y':
+            list_first_matrix_first_row=[list_row_first_of_second_matrix[0],list_row_first_of_second_matrix[1],list_row_first_of_second_matrix[2],list_row_first_of_second_matrix[3],list_row_first_of_second_matrix[4],list_row_first_of_second_matrix[0],list_row_first_of_second_matrix[1]]
+            list_first_matrix_second_row=[list_row_second_of_second_matrix[0],list_row_second_of_second_matrix[1],list_row_second_of_second_matrix[2],list_row_second_of_second_matrix[3],list_row_second_of_second_matrix[4],list_row_second_of_second_matrix[0],list_row_second_of_second_matrix[1]]
+            list_first_matrix_third_row=[list_row_third_of_second_matrix[0],list_row_third_of_second_matrix[1],list_row_third_of_second_matrix[2],list_row_third_of_second_matrix[3],list_row_third_of_second_matrix[4],list_row_third_of_second_matrix[0],list_row_third_of_second_matrix[1]]
+            list_first_matrix_fourth_row=[list_row_fourth_of_second_matrix[0],list_row_fourth_of_second_matrix[1],list_row_fourth_of_second_matrix[2],list_row_fourth_of_second_matrix[3],list_row_fourth_of_second_matrix[4],list_row_fourth_of_second_matrix[0],list_row_fourth_of_second_matrix[1]]
+            llist_first_matrix_fivth_row=[list_row_fiveth_of_second_matrix[0],list_row_fiveth_of_second_matrix[1],list_row_fiveth_of_second_matrix[2],list_row_fiveth_of_second_matrix[3],list_row_fiveth_of_second_matrix[4],list_row_fiveth_of_second_matrix[0],list_row_fiveth_of_second_matrix[1],]
+            determiant_of_fourbyfour_matrix=(list_first_matrix_first_row[0]*list_first_matrix_second_row[1]*list_first_matrix_third_row[2]*list_first_matrix_fourth_row[3]*llist_first_matrix_fivth_row[4])+(list_first_matrix_first_row[1]*list_first_matrix_second_row[2]*list_first_matrix_third_row[3]*list_first_matrix_fourth_row[4]*llist_first_matrix_fivth_row[5])+(list_first_matrix_first_row[2]*list_first_matrix_second_row[3]*list_first_matrix_third_row[4]*list_first_matrix_fourth_row[5]*llist_first_matrix_fivth_row[6])-(list_first_matrix_first_row[6]*list_first_matrix_second_row[5]*list_first_matrix_third_row[4]*list_first_matrix_fourth_row[3]*llist_first_matrix_fivth_row[2])-(list_first_matrix_first_row[5]*list_first_matrix_second_row[4]*list_first_matrix_third_row[3]*list_first_matrix_fourth_row[2]*llist_first_matrix_fivth_row[1])-(list_first_matrix_first_row[4]*list_first_matrix_second_row[3]*list_first_matrix_third_row[2]*list_first_matrix_fourth_row[1]*llist_first_matrix_fivth_row[0])
+            print('Determianat of your 4by4 matrix is',determiant_of_fourbyfour_matrix)
+        elif determiant_check=="n" or determiant_check=='N':
+            print('Ok,you dont want to check 4by4 matirx determiant')
+        else:
+            print('invalid')
+    else:
+        pass
+#which_operation=int(input('''Which operation that you want to use:
+                        
+#Addition---(press 1)
+#substruction(press 2)
+#Multiplication(press 3)'''))
+if rows==rows_second_matrix :
+    print('\nSum of two matrixes is \n')
+    if rows==1 and rows_second_matrix==1:
+        total_matrix_first=[]
+    elif rows==2 and rows_second_matrix==2:
+        total_matrix_first=[]
+        total_matrix_second=[]
+    elif rows==3 and rows_second_matrix==3:
+        total_matrix_first=[]
+        total_matrix_second=[]
+        total_matrix_third=[]
+    elif rows==4 and rows_second_matrix==4:
+        total_matrix_first=[]
+        total_matrix_second=[]
+        total_matrix_third=[]
+        total_matrix_fourth=[]
+    elif rows==5 and rows_second_matrix==5:
+        total_matrix_first=[]
+        total_matrix_second=[]
+        total_matrix_third=[]
+        total_matrix_fourth=[]
+        total_matrix_fivth=[]
+    for i in range(1,rows_second_matrix+1):
+        if(i==1):
+            for i in range(0,coloumns_second_matrix):
+                sum_fist_second_matrix=list_row_first[i]+list_row_first_of_second_matrix[i]
+                total_matrix_first.append(sum_fist_second_matrix)
+        elif(i==2):
+            for i in range(0,coloumns_second_matrix):
+                sum_fist_second_matrix=list_row_second[i]+list_row_second_of_second_matrix[i]
+                total_matrix_second.append(sum_fist_second_matrix)
+        elif(i==3):
+            for i in range(0,coloumns_second_matrix):
+                sum_fist_second_matrix=list_row_third[i]+list_row_third_of_second_matrix[i]
+                total_matrix_third.append(sum_fist_second_matrix)
+        elif(i==4):
+            for i in range(1,coloumns_second_matrix):
+                sum_fist_second_matrix=list_row_fourth[i]+list_row_fourth_of_second_matrix[i]
+                total_matrix_fourth.append(sum_fist_second_matrix)
+        elif(i==5):
+            for i in range(1,coloumns_second_matrix):
+                sum_fist_second_matrix=list_row_fiveth[i]+list_row_fiveth_of_second_matrix[i]
+                total_matrix_fivth.append(sum_fist_second_matrix)
+    if rows_second_matrix==1:
+        print('|',end=" ")
+        for i in total_matrix_first:
+            print(i,end=' ')
+        print('|')
+    elif rows_second_matrix==2:
+        print('|',end=" ")
+        for i in total_matrix_first:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_second:
+            print(i,end=' ')
+        print('|')
+    elif rows_second_matrix==3:
+        print('|',end=" ")
+        for i in total_matrix_first:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_second:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_third:
+            print(i,end=' ')
+        print('|')
+    elif rows_second_matrix==4:
+        print('|',end=" ")
+        for i in total_matrix_first:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_second:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_third:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_fourth:
+            print(i,end=' ')
+        print('|')
+    elif rows_second_matrix==5:
+        print('|',end=" ")
+        for i in total_matrix_first:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_second:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_third:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_fourth:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_fivth:
+            print(i,end=' ')
+        print('|')
+else:
+    print('Sorry,your matrix is not equal')
+    print('Note: for Addition ,two matrix must be equal its rows and coloumns.')
+
+if rows==rows_second_matrix :
+    print('\nSubstraction of two matrixes is \n')
+    if rows==1 and rows_second_matrix==1:
+        total_matrix_first=[]
+    elif rows==2 and rows_second_matrix==2:
+        total_matrix_first=[]
+        total_matrix_second=[]
+    elif rows==3 and rows_second_matrix==3:
+        total_matrix_first=[]
+        total_matrix_second=[]
+        total_matrix_third=[]
+    elif rows==4 and rows_second_matrix==4:
+        total_matrix_first=[]
+        total_matrix_second=[]
+        total_matrix_third=[]
+        total_matrix_fourth=[]
+    elif rows==5 and rows_second_matrix==5:
+        total_matrix_first=[]
+        total_matrix_second=[]
+        total_matrix_third=[]
+        total_matrix_fourth=[]
+        total_matrix_fivth=[]
+    for i in range(1,rows_second_matrix+1):
+        if(i==1):
+            for i in range(0,coloumns_second_matrix):
+                sum_fist_second_matrix=list_row_first[i]-list_row_first_of_second_matrix[i]
+                total_matrix_first.append(sum_fist_second_matrix)
+        elif(i==2):
+            for i in range(0,coloumns_second_matrix):
+                sum_fist_second_matrix=list_row_second[i]-list_row_second_of_second_matrix[i]
+                total_matrix_second.append(sum_fist_second_matrix)
+        elif(i==3):
+            for i in range(0,coloumns_second_matrix):
+                sum_fist_second_matrix=list_row_third[i]-list_row_third_of_second_matrix[i]
+                total_matrix_third.append(sum_fist_second_matrix)
+        elif(i==4):
+            for i in range(1,coloumns_second_matrix):
+                sum_fist_second_matrix=list_row_fourth[i]-list_row_fourth_of_second_matrix[i]
+                total_matrix_fourth.append(sum_fist_second_matrix)
+        elif(i==5):
+            for i in range(1,coloumns_second_matrix):
+                sum_fist_second_matrix=list_row_fiveth[i]-list_row_fiveth_of_second_matrix[i]
+                total_matrix_fivth.append(sum_fist_second_matrix)
+    if rows_second_matrix==1:
+        print('|',end=" ")
+        for i in total_matrix_first:
+            print(i,end=' ')
+        print('|')
+    elif rows_second_matrix==2:
+        print('|',end=" ")
+        for i in total_matrix_first:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_second:
+            print(i,end=' ')
+        print('|')
+    elif rows_second_matrix==3:
+        print('|',end=" ")
+        for i in total_matrix_first:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_second:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_third:
+            print(i,end=' ')
+        print('|')
+    elif rows_second_matrix==4:
+        print('|',end=" ")
+        for i in total_matrix_first:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_second:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_third:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_fourth:
+            print(i,end=' ')
+        print('|')
+    elif rows_second_matrix==5:
+        print('|',end=" ")
+        for i in total_matrix_first:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_second:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_third:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_fourth:
+            print(i,end=' ')
+        print('|')
+        print('|',end=" ")
+        for i in total_matrix_fivth:
+            print(i,end=' ')
+        print('|')
+else:
+    print('Sorry,your matrix is not equal')
+    print('Note: for Addition ,two matrix must be equal its rows and coloumns.')
+
+#if which_operation==1:
+    #print('|',)
