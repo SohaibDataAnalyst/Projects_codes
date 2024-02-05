@@ -1,0 +1,248 @@
+which_eq = eval(input(
+    'which degree of Polynomial equation that your are using: \nfourth degree(press 1)\nThird degree(press 2)\nSecond degree(press 3)'))
+if (which_eq == 3):
+    print('Your equation looks (ax**2+bx+c)')
+    print('NOTE: if your x valuos is in complex form then You cannot solve this Equation')
+    a = eval(input('Enter a value of  coffient of x squre : '))
+    b = eval(input('Enter a value of coffient of x : '))
+    c = eval(input('Enter a value of constant : '))
+    print('Your Equation is :', a, 'x**2', '+', b, 'x', '+', c)
+    print('first we have to find the first derivative')
+    deri_1 = 0
+    deri_1 = 2 * a, 'x', '+', b
+    print('Your first derivative Equation is :', 2 * a, 'x', '+', b)
+    deri_1 = -b / (2 * a)
+    print('Your first derivative of x value is(critical Point) :', deri_1)
+    interval_0 = input('Are you want to know about the intervals ?(yes(press y)/no(press n))')
+    if (interval_0 == 'y' or interval_0 == 'Y'):
+        print('Your interval Point is (-infinity  ', deri_1, ']', '[', deri_1, '  +infinity)')
+    elif (interval_0 == 'n' or interval_0 == "N"):
+        print('Ok You dont want to know the interval points')
+    else:
+        print('invalid')
+    test_point = input('Are you want to find the test points(yes(press y)/no(press n))')
+    if (test_point == 'y' or test_point == 'Y'):
+        print('Your first interval point is (-infinity  ', deri_1, ']')
+        print('input Your value is between (-infinity  ', deri_1, ']')
+        first_interval_point = eval(input('Enter a value:  '))
+        if (first_interval_point <= deri_1):
+            print('your first_interval_test_point  is ', (2 * a * first_interval_point) + b)
+        elif first_interval_point > deri_1:
+            print('Not in Range')
+        else:
+            print('invalid')
+        print('Your Second interval point is', '[', deri_1, '  +infinity)')
+        print('input Your value is between [', deri_1, '    +infinity)')
+        Second_interval_point = eval(input('Enter a value between: '))
+        if (Second_interval_point >= deri_1):
+            print('your first_interval_test_point  is ', (2 * a * Second_interval_point) + b)
+        elif Second_interval_point < deri_1:
+            print('Not in Range')
+        else:
+            print('Sorry..! invalid')
+    elif test_point == 'n' or test_point == 'N':
+        print('okay You don"t want to check the test points')
+    else:
+        print('invalid')
+    check_increaing = input(
+        'Are you want to know about where your function is increasing or decreaing?(yes (press y)/no (press n)')
+    if check_increaing == 'y' or check_increaing == 'Y':
+        if ((2 * a * first_interval_point) + b) > 0:
+            print("At This (-infinity  ", deri_1, '] interval of your function is increasing ')
+        else:
+            print("At This (-infinity  ", deri_1, '] interval of your function is decreaing ')
+        if ((2 * a * Second_interval_point) + b) > 0:
+            print("At This  [", deri_1, '  +infinity) interval of your function is increasing ')
+        else:
+            print("At This [", deri_1, '  +infinity) interval of your function is increasing ')
+
+    deri_1_again = input('Are you want to know Second derivative ?(yes(press y)/no(press any key)) ')
+    if deri_1_again == 'y' or deri_1_again == "Y":
+        print('Second derivative of given Equation is :', 2 * a)
+        print('Second derivative  is also know as "point of inflection"')
+        print('So point of inflection is: ', 2 * a)
+        interval_0 = input('Are you want to know about the intervals ?(yes(press y)/no(press n))')
+        if (interval_0 == 'y' or interval_0 == "y"):
+            print('Your interval Point is (-infinity  ', 2 * a, ']', '[', 2 * a, '  +infinity)')
+        elif (interval_0 == 'n' or interval_0 == 'N'):
+            print('Ok You dont want to know the interval points')
+        else:
+            print("invalid")
+        test_point = input('Are you want to find the test points(yes(press y)/no(press n))')
+        if (test_point == 'y' or test_point == "Y"):
+            print('Your first interval point is (-infinity  ', 2 * a, ']')
+            print('Your Second interval point is [', 2 * a, '+infinity)')
+            print('input Your value is between (-infinity  ', 2 * a, ']', '(if you  input value greater then ', 2 * a,
+                  'then it will be invalid')
+            Second_first_interval_point = eval(input('Enter a value:  '))
+            if (Second_first_interval_point <= (2 * a)):
+                print('your first_interval_test_point  is ',
+                      (a * (Second_first_interval_point) * 2) + (b(Second_first_interval_point)) + (c))
+            elif Second_first_interval_point > (2 * a):
+                print('NOT in Range')
+            else:
+                print('invalid')
+        print('input Your value is between [', 2 * a, '     +infinity)')
+        Second_second_interval_point = eval(input('Enter a value:  '))
+        if Second_second_interval_point >= (2 * a):
+            print('your Second interval test_point  is ',
+                  (a * (Second_second_interval_point) * 2) + (b(Second_second_interval_point)) + (c))
+            # print('Enter your first interval test value: (less then ',)
+        elif Second_second_interval_point < (2 * a):
+            print('Not in Range')
+        else:
+            print('invalid')
+    elif deri_1_again == 'n' or deri_1_again == "N":
+        print('Ok you don''t want to know Second derivative')
+    else:
+        print('invalid')
+elif (which_eq == 2):
+    print('Your equation looks (ax*3+bx*2+cx+d)')
+    print('NOTE: if your x valuos is in complex form then You cannot solve this Equation')
+    a = eval(input('Enter a value of  coffient of x cube : '))
+    b = eval(input('Enter a value of coffient of squre : '))
+    c = eval(input('Enter a value of coffient of x : '))
+    d = eval(input('Enter a value of constant : '))
+    print('Your Equation is :', a, 'x*3', '+', b, 'x*2', '+', c, 'x', d)
+    print('first we have to find the first derivative')
+    print('first derivative of given Equation is :', 3 * a, 'x**2+', 2 * b, 'x+', c)
+    print('given Equation is the Qudratic Equation so it has two x valuos')
+    x_0 = ((-(2 * b)) + ((2 * b) * 2 - 4*(3 * a)*c) ** (1 / 2)) / (2*(3 * a))
+    x_1 = ((-(2 * b)) - ((2 * b) * 2 - 4*(3 * a)*c) ** (1 / 2)) / (2*(3 * a))
+    print('Your first  x valuo is', (x_0))
+    print('Your second x valuo is', (x_1))
+    # print(type(x_1))
+    # print(type(x_0))
+    if (type(x_0) == complex or type(x_1) == complex):
+        print('x values is too much complex')
+    else:
+        interval_1 = input('Are you want to know about its interval?yes(press y)/no (press n)')
+        if (interval_1 == 'y' or interval_1 == 'Y'):
+            print('your Fist interval is (-infinity  ', x_0, ']')
+            print('your Second interval is [', x_0, '   ', x_1, ']')
+            print('your Third interval is [', x_1, '   +infinity)')
+        elif (interval_1 == 'N' or interval_1 == 'n'):
+            print("okay..you don't want to know about interval.")
+        else:
+            print('invalid')
+        test_point = input('Are you want to find the test point of the given interval?yes(press y)/no (press n)')
+        if (test_point == 'y' or test_point == 'Y'):
+            print('intervals are :\n Fist interval    (-infinity  ', x_0, '] \n ''Second interval    [', x_0, '   ',
+                  x_1, ']  \n' 'Third interval     [', x_1, '   +infinity)')
+            print('Enter your first interval test value: (less then ', x_0, ')')
+            first_der_interval_test_point = eval(input('value :'))
+            if (first_der_interval_test_point <= x_0):
+                print('your first test point of Given Equation  is: ',
+                      ((3 * a) * (first_der_interval_test_point) ** 2) + ((2 * b) * (first_der_interval_test_point)) + (
+                          c))
+            else:
+                print('invalid')
+            x_1 = int(x_1)
+            x_0 = int(x_0)
+            if x_1 > x_0:
+                z = range(x_0, x_1)
+                print('Enter your Second interval test value: (between ', x_0, '     ', x_1, ')')
+            else:
+                z = range(x_1, x_0)
+                print('Enter your Second interval test value: (between ', x_1, '     ', x_0, ')')
+            Fist_der_interval_second_test_point = eval(input('value : '))
+            if Fist_der_interval_second_test_point in z:
+                # if (Fist_der_interval_second_test_point >=float(x_0) & (Fist_der_interval_second_test_point<=float(x_1))):
+                # if (Fist_der_interval_second_test_point  in  range(float(x_0),float(x_1))):
+                print('your first test point of Given Equation  is: ',
+                      ((3 * a) * (Fist_der_interval_second_test_point) ** 2) + (
+                                  (2 * b) * (Fist_der_interval_second_test_point)) + c)
+            elif (Fist_der_interval_second_test_point not in range(x_0, x_1)):
+                print('Sorry your number is not in range')
+            else:
+                print('invalid')
+            print('Enter your Second interval test value: (greater then', x_1, ')')
+            Fist_der_interval_third_test_point = eval(input('value : '))
+            if (Fist_der_interval_third_test_point >= x_1):
+                print('your first test point of Given Equation  is: ',
+                      ((3 * a) * (Fist_der_interval_third_test_point) ** 2) + (
+                                  (2 * b) * (Fist_der_interval_third_test_point)) + c)
+            elif (Fist_der_interval_third_test_point <= x_1):
+                print('Sorry your number is less then ', x_1)
+            else:
+                print('invalid')
+        elif (test_point == 'n' or test_point == 'N'):
+            print('okay you don"t want to check test points')
+        else:
+            print('invalid')
+
+        check_increaing = input(
+            'Are you want to know about where your function is increasing or decreaing?(yes (press y)/no (press n)')
+        if check_increaing == 'y' or check_increaing == 'Y':
+            print("At This (-infinity  ", x_0,
+                  '] interval of your function is increasing or decreaing ? select a number ')
+            first_der_interval_test_point = eval(input('Enter valuo: '))
+            if first_der_interval_test_point > x_0:
+                print('Not in range')
+            else:
+                pass
+            if (((3 * a) * (first_der_interval_test_point) ** 2) + ((2 * b) * (first_der_interval_test_point)) + (
+            c)) > 0:
+                print("At This (-infinity  ", x_0, '] interval of your function is increasing ')
+            else:
+                print("At Tahis (-infinity  ", x_0, '] interval of your function is increasing ')
+            print("At This  [", x_0, '    ', x_1,
+                  '] interval of your function is increasing or decreaing ? select a number ')
+            Fist_der_interval_second_test_point = eval(input('Enter valuo: '))
+            if Fist_der_interval_second_test_point not in range(x_0, x_1):
+                print('Not in range')
+            else:
+                pass
+            if (((3 * a) * (Fist_der_interval_second_test_point) ** 2) + (
+                    (2 * b) * (Fist_der_interval_second_test_point)) + (c)) > 0:
+                print("At This    [", x_0, '    ', x_1, ']  interval of your function is increasing ')
+            else:
+                print("At This    [", x_0, '    ', x_1, ']  interval of your function is increasing ')
+            print("At This   [", x_1,
+                  '   +infinity) interval of your function is increasing or decreaing ? select a number ')
+            Fist_der_interval_third_test_point = eval(input('Enter valuo: '))
+            if Fist_der_interval_third_test_point < x_1:
+                print('Not in range')
+            else:
+                pass
+            if (((3 * a) * (Fist_der_interval_third_test_point) ** 2) + (
+                    (2 * b) * (Fist_der_interval_third_test_point)) + c) > 0:
+                print("At This     [", x_1, '   +infinity)  interval of your function is increasing ')
+            else:
+                print("At This     [", x_1, '   +infinity)  interval of your function is increasing ')
+
+        deri_1_again = input('Are you want to know Second derivative ?(yes(press y)/no(press n)) ')
+        if deri_1_again == 'y':
+            print('Second derivative of given Equation is :', 6 * a, 'x+', 2 * b)
+            # print('Second derivative  is also know as "point of inflection"')
+            print('So point of inflection is :  ', 'x=', (2 * b) / (6 * a))
+        else:
+            print('Ok you don''t want to know Second derivative')
+        Second_der_test = input('Are you want to know the Second derivative test points?yes(press y)/no (press n)')
+        if (Second_der_test == 'y' or Second_der_test == 'Y'):
+            print('here only two intervals \n(-infinity   ', (2 * b) / (6 * a), ']\n', '[', (2 * b) / (6 * a),
+                  '   +infinity)')
+            print('so fist we take a test points form This interval\n(-infinity   ', (2 * b) / (6 * a), ']')
+            print('Enter a test point : (less then ', (2 * b) / (6 * a), ')')
+            test_point_0 = eval(input('Test point: '))
+            if test_point_0 <= (2 * b) / (6 * a):
+                print('fist test_point_ of Second derivative test :',
+                      (a * (test_point_0) * 3) + (b(test_point_0) ** 2) + (c * test_point_0) + d)
+            elif test_point_0 >= ((2 * b) / (6 * a)):
+                print("Sorry your Enter number is greater then", (2 * b) / (6 * a))
+            else:
+                print('invalid..!')
+            print('Enter a test point : (greater then ', (2 * b) / (6 * a), ')')
+            test_point_1 = eval(input('Test point: '))
+            if test_point_1 >= ((2 * b) / (6 * a)):
+                print('Second test_point_ of Second derivative test is :',
+                      (a * (test_point_1) * 3) + (b(test_point_1) ** 2) + (c * test_point_1) + d)
+            elif (test_point_1 <= ((2 * b) / (6 * a))):
+                print('Sorry you Enter less then ', (2 * b) / (6 * a))
+            else:
+                print('invalid..!')
+            # print('So your test points are :\n',(a*(test_point_0)*3)+(b(test_point_0)*2)+(c*test_point_0)+d,'\n',(a(test_point_1)*3)+(b(test_point_1)**2)+(c*test_point_1)+d)
+        elif (Second_der_test == "n" or Second_der_test == 'N'):
+            print('Okay..you don"t want to know Second derivative test.')
+        else:
+            print("invalid")
